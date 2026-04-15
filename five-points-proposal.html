@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five Points Strategic Advisors × AIS — Partnership Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{--bg:#fafaf9;--bg-white:#fff;--border:#e7e5e4;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--text-dim:#a8a29e;--accent:#4338ca;--red:#dc2626;--red-bg:#fef2f2;--green:#16a34a;--green-bg:#f0fdf4;--amber:#d97706;--amber-bg:#fffbeb;--blue:#2563eb;--blue-bg:#eff6ff}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .container{max-width:760px;margin:0 auto;padding:0 24px}
+  .proposal-header{padding:48px 0 40px;border-bottom:2px solid var(--text)}
+  .proposal-header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px}
+  .proposal-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .proposal-date{font-size:12px;color:var(--text-muted);text-align:right}
+  .proposal-header h1{font-size:28px;font-weight:800;line-height:1.2;letter-spacing:-.02em}
+  .proposal-header h1 span{color:var(--accent)}
+  .proposal-tagline{font-size:15px;color:var(--text-secondary);margin-top:10px;max-width:580px}
+  .section{padding:36px 0;border-bottom:1px solid var(--border)}
+  .section:last-of-type{border-bottom:none}
+  .section-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px}
+  .section h2{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:12px}
+  .section p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+  .gap-list{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+  .gap-item{display:flex;gap:16px;align-items:flex-start;padding:16px 20px;background:var(--bg-white);border:1px solid var(--border);border-radius:10px}
+  .gap-indicator{flex-shrink:0;width:8px;height:8px;border-radius:50%;margin-top:6px}
+  .gap-indicator.red{background:var(--red)}.gap-indicator.amber{background:var(--amber)}
+  .gap-content{flex:1}
+  .gap-content strong{font-size:13px;font-weight:600;display:block;margin-bottom:3px}
+  .gap-content span{font-size:13px;color:var(--text-muted)}
+  .gap-cost{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--red);background:var(--red-bg);padding:4px 10px;border-radius:6px;white-space:nowrap;align-self:center}
+  .roadmap{margin-top:20px;display:flex;flex-direction:column}
+  .roadmap-month{display:grid;grid-template-columns:100px 1fr}
+  .roadmap-label{padding:20px 16px 20px 0;border-right:2px solid var(--border);position:relative}
+  .roadmap-label h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+  .roadmap-label .dot{position:absolute;right:-5px;top:24px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .roadmap-content{padding:16px 0 24px 24px}
+  .roadmap-content p{font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:6px}
+  .roadmap-content p strong{color:var(--text);font-weight:600}
+  .investment-box{margin-top:20px;background:var(--bg-white);border:2px solid var(--text);border-radius:12px;padding:32px;text-align:center}
+  .investment-amount{font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:800;letter-spacing:-.02em}
+  .investment-period{font-size:14px;color:var(--text-muted);margin-top:4px}
+  .investment-terms{margin-top:20px;font-size:12px;color:var(--text-muted);display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+  .investment-terms span{display:flex;align-items:center;gap:6px}
+  .check{color:var(--green);font-weight:700}
+  .compare-grid{margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .compare-card{padding:20px;border-radius:10px;text-align:center}
+  .compare-card.alt1{background:var(--red-bg)}.compare-card.alt2{background:var(--amber-bg)}.compare-card.ais{background:var(--green-bg);border:2px solid var(--green)}
+  .compare-card h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:6px}
+  .compare-card .price{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;margin-bottom:6px}
+  .compare-card.alt1 .price{color:var(--red)}.compare-card.alt2 .price{color:var(--amber)}.compare-card.ais .price{color:var(--green)}
+  .compare-card p{font-size:11px;color:var(--text-muted);line-height:1.5}
+  .includes-grid{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .includes-item{font-size:13px;color:var(--text-secondary);padding:10px 14px;background:var(--bg-white);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;gap:8px}
+  .cta-section{padding:48px 0;text-align:center}
+  .cta-section h2{font-size:22px;font-weight:700;margin-bottom:12px}
+  .cta-section p{font-size:14px;color:var(--text-muted);max-width:480px;margin:0 auto 28px;line-height:1.7}
+  .cta-btn{display:inline-block;background:var(--text);color:white;padding:14px 40px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:opacity .2s}
+  .cta-btn:hover{opacity:.85}
+  .cta-sub{font-size:12px;color:var(--text-dim);margin-top:12px}
+  .footer{padding:24px 0;border-top:1px solid var(--border);text-align:center}
+  .footer p{font-size:11px;color:var(--text-dim)}
+  @media(max-width:640px){.compare-grid,.includes-grid{grid-template-columns:1fr}.roadmap-month{grid-template-columns:80px 1fr}.gap-item{flex-direction:column;gap:8px}.gap-cost{align-self:flex-start}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="proposal-header">
+    <div class="proposal-header-top">
+      <div class="proposal-label">Partnership Proposal</div>
+      <div class="proposal-date">April 2026<br>Confidential</div>
+    </div>
+    <h1>Five Points Strategic Advisors <span>× AIS</span></h1>
+    <p class="proposal-tagline">Strategic digital operations to match your web presence to where your firm already operates. $230M in allocations, 50+ funded projects, and a lead generation tool nobody else has — made visible, captured, and converted.</p>
+  </div>
+  <div class="section">
+    <div class="section-label">What We See</div>
+    <h2>A firm that's earned its position — with a web presence that undersells it.</h2>
+    <p>Five Points has Treasury-verified NMTC credentials across 5 allocation rounds, $270M+ in funded projects, and an interactive eligibility map no competitor offers. The firm's reputation in the NMTC space is built on real deals and real results. The problem is straightforward: the digital presence doesn't reflect the real-world capability. Google indexes 4 of your 55 pages. Your CDFI's $230M in allocations — your strongest trust signal — is invisible to anyone researching the consulting firm. Prospects who find you through referrals see a site that doesn't match what they were told.</p>
+  </div>
+  <div class="section">
+    <div class="section-label">What It's Costing You</div>
+    <h2>Three gaps, measurable cost.</h2>
+    <div class="gap-list">
+      <div class="gap-item"><div class="gap-indicator red"></div><div class="gap-content"><strong>93% of content invisible to search</strong><span>Weekly posts at 250-316 words don't meet indexing thresholds. You're paying for content production that generates zero organic discovery.</span></div><div class="gap-cost">0 leads/mo</div></div>
+      <div class="gap-item"><div class="gap-indicator red"></div><div class="gap-content"><strong>NMTC Map ungated, unpromoted</strong><span>The highest-intent tool in your space — developers checking site eligibility — has no lead capture and doesn't appear in search.</span></div><div class="gap-cost">5-10 leads/mo lost</div></div>
+      <div class="gap-item"><div class="gap-indicator amber"></div><div class="gap-content"><strong>$230M in CDFI credentials disconnected</strong><span>Two entities, two websites, zero cross-linking. Prospects researching Five Points never see the Treasury-verified allocation record.</span></div><div class="gap-cost">Trust gap</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-label">What We'll Build Together</div>
+    <h2>90-day roadmap. Specifics, not promises.</h2>
+    <div class="roadmap">
+      <div class="roadmap-month"><div class="roadmap-label"><h3>Month 1</h3><div class="dot"></div></div><div class="roadmap-content"><p><strong>Gate the NMTC Eligibility Map</strong> with email capture. Configure analytics. Promote on Thane's LinkedIn and in existing content. This is the fastest path to qualified leads — the tool exists, it just needs a front door.</p><p><strong>Bridge the two entities.</strong> Cross-link consulting site and CDFI site. Build a unified credentials page: 5 allocation rounds, $230M, 50+ projects. Add structured data so Google surfaces the full picture.</p><p><strong>Launch email platform.</strong> Capture infrastructure in place for map leads, site visitors, and existing contact database.</p></div></div>
+      <div class="roadmap-month"><div class="roadmap-label"><h3>Month 2</h3><div class="dot"></div></div><div class="roadmap-content"><p><strong>Content consolidation.</strong> Take the 50+ thin posts and rebuild as 4-5 comprehensive case-study guides using real deal data (Houston Meat Distributors, other public closings). Each guide: 2,500+ words, structured for search ranking, built to convert.</p><p><strong>Thane's LinkedIn strategy.</strong> Personal thought-leader content tied to each guide, each deal highlight, each policy update. Individual accounts outperform company pages by 5-10x in B2B advisory.</p></div></div>
+      <div class="roadmap-month"><div class="roadmap-label"><h3>Month 3</h3><div class="dot"></div></div><div class="roadmap-content"><p><strong>Remaining guides published.</strong> Complete the 8-10 guide library covering NMTC process, eligibility, deal structuring, and Five Points case studies.</p><p><strong>Email nurture live.</strong> Quarterly newsletter + automated drip for new map leads. Deal highlights, policy updates, Thane's market perspective.</p><p><strong>Measurement.</strong> Indexed page count, map lead volume, email list growth, LinkedIn engagement, inbound inquiry tracking. Baseline vs. month 3 comparison to quantify ROI.</p></div></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-label">The Investment</div>
+    <h2>Make it make sense.</h2>
+    <div class="investment-box">
+      <div class="investment-amount">$2,000/mo</div>
+      <div class="investment-period">No long-term contract. Cancel anytime.</div>
+      <div class="investment-terms"><span><span class="check">&#10003;</span> Month-to-month</span><span><span class="check">&#10003;</span> All deliverables owned by you</span><span><span class="check">&#10003;</span> Weekly async updates</span></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card alt1"><h4>Marketing Agency</h4><div class="price">$5-8K/mo</div><p>Retainer + creative fees. They write content. Same thin content problem at 3x the cost.</p></div>
+      <div class="compare-card alt2"><h4>One-Time Project</h4><div class="price">$15-25K</div><p>Site redesign, then done. No ongoing strategy, optimization, or content. Decays in 6 months.</p></div>
+      <div class="compare-card ais"><h4>AIS Partnership</h4><div class="price">$2K/mo</div><p>Strategy + execution + optimization, continuously. Every deliverable builds on the last.</p></div>
+    </div>
+    <p style="font-size:13px;color:var(--text-muted);margin-top:20px;line-height:1.7"><strong style="color:var(--text)">The comparison that matters:</strong> One additional NMTC consulting engagement per year — conservatively $50-100K+ in advisory fees — covers this investment 2-4x over. The map alone, once gated and promoted, should generate enough qualified inquiries to make that conservative.</p>
+  </div>
+  <div class="section">
+    <div class="section-label">What's Included</div>
+    <h2>A strategic partner, not a vendor.</h2>
+    <div class="includes-grid">
+      <div class="includes-item"><span class="check">&#10003;</span> Dedicated strategist (Austin)</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Weekly progress updates</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Content strategy + execution</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Email platform setup + management</div>
+      <div class="includes-item"><span class="check">&#10003;</span> LinkedIn content strategy</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Technical SEO + indexation fixes</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Lead capture infrastructure</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Monthly performance reporting</div>
+    </div>
+  </div>
+  <div class="cta-section">
+    <h2>Let's start with the map.</h2>
+    <p>The NMTC Eligibility Map can be gated and generating leads within 2 weeks. That's the first proof point — measurable, fast, and directly tied to revenue. Everything else builds from there.</p>
+    <a href="mailto:austin@kamplove.org?subject=Five%20Points%20%C3%97%20AIS%20-%20Let's%20Go" class="cta-btn">Let's Go &rarr;</a>
+    <p class="cta-sub">austin@kamplove.org</p>
+  </div>
+  <div class="footer"><p>Austin Rockwell &middot; AIS &middot; April 2026 &middot; Confidential</p></div>
+</div>
+</body>
+</html>
