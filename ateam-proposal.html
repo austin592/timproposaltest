@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-Team Construction Ã AIS â Partnership Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{--bg:#fafaf9;--bg-white:#fff;--border:#e7e5e4;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--text-dim:#a8a29e;--accent:#4338ca;--red:#dc2626;--red-bg:#fef2f2;--green:#16a34a;--green-bg:#f0fdf4;--amber:#d97706;--amber-bg:#fffbeb}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .container{max-width:760px;margin:0 auto;padding:0 24px}
+  .proposal-header{padding:48px 0 40px;border-bottom:2px solid var(--text)}
+  .proposal-header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px}
+  .proposal-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .proposal-date{font-size:12px;color:var(--text-muted);text-align:right}
+  .proposal-header h1{font-size:28px;font-weight:800;line-height:1.2;letter-spacing:-.02em}
+  .proposal-header h1 span{color:var(--accent)}
+  .proposal-tagline{font-size:15px;color:var(--text-secondary);margin-top:10px;max-width:600px}
+  .section{padding:36px 0;border-bottom:1px solid var(--border)}
+  .section:last-of-type{border-bottom:none}
+  .section-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px}
+  .section h2{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:12px}
+  .section p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+  .gap-list{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+  .gap-item{display:flex;gap:16px;align-items:flex-start;padding:16px 20px;background:var(--bg-white);border:1px solid var(--border);border-radius:10px}
+  .gap-indicator{flex-shrink:0;width:8px;height:8px;border-radius:50%;margin-top:6px}
+  .gap-indicator.red{background:var(--red)}
+  .gap-indicator.amber{background:var(--amber)}
+  .gap-content{flex:1}
+  .gap-content strong{font-size:13px;font-weight:600;display:block;margin-bottom:3px}
+  .gap-content span{font-size:13px;color:var(--text-muted)}
+  .gap-cost{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--red);background:var(--red-bg);padding:4px 10px;border-radius:6px;white-space:nowrap;align-self:center}
+  .roadmap{margin-top:20px;display:flex;flex-direction:column}
+  .roadmap-month{display:grid;grid-template-columns:100px 1fr}
+  .roadmap-label{padding:20px 16px 20px 0;border-right:2px solid var(--border);position:relative}
+  .roadmap-label h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+  .roadmap-label .dot{position:absolute;right:-5px;top:24px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .roadmap-content{padding:16px 0 24px 24px}
+  .roadmap-content p{font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:6px}
+  .roadmap-content p strong{color:var(--text);font-weight:600}
+  .callout{margin-top:24px;padding:20px 24px;background:var(--green-bg);border:1px solid #bbf7d0;border-radius:10px}
+  .callout p{font-size:13px;color:var(--text-secondary);line-height:1.65}
+  .callout p strong{color:var(--text)}
+  .investment-box{margin-top:20px;background:var(--bg-white);border:2px solid var(--text);border-radius:12px;padding:32px;text-align:center}
+  .investment-amount{font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:800;letter-spacing:-.02em}
+  .investment-period{font-size:14px;color:var(--text-muted);margin-top:4px}
+  .investment-terms{margin-top:20px;font-size:12px;color:var(--text-muted);display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+  .investment-terms span{display:flex;align-items:center;gap:6px}
+  .check{color:var(--green);font-weight:700}
+  .compare-grid{margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .compare-card{padding:20px;border-radius:10px;text-align:center}
+  .compare-card.alt1{background:var(--red-bg)}
+  .compare-card.alt2{background:var(--amber-bg)}
+  .compare-card.ais{background:var(--green-bg);border:2px solid var(--green)}
+  .compare-card h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:6px}
+  .compare-card .price{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;margin-bottom:6px}
+  .compare-card.alt1 .price{color:var(--red)}
+  .compare-card.alt2 .price{color:var(--amber)}
+  .compare-card.ais .price{color:var(--green)}
+  .compare-card p{font-size:11px;color:var(--text-muted);line-height:1.5}
+  .includes-grid{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .includes-item{font-size:13px;color:var(--text-secondary);padding:10px 14px;background:var(--bg-white);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;gap:8px}
+  .cta-section{padding:48px 0;text-align:center}
+  .cta-section h2{font-size:22px;font-weight:700;margin-bottom:12px}
+  .cta-section p{font-size:14px;color:var(--text-muted);max-width:480px;margin:0 auto 28px;line-height:1.7}
+  .cta-btn{display:inline-block;background:var(--text);color:white;padding:14px 40px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:opacity .2s}
+  .cta-btn:hover{opacity:.85}
+  .cta-sub{font-size:12px;color:var(--text-dim);margin-top:12px}
+  .footer{padding:24px 0;border-top:1px solid var(--border);text-align:center}
+  .footer p{font-size:11px;color:var(--text-dim)}
+  @media(max-width:640px){.compare-grid,.includes-grid{grid-template-columns:1fr}.roadmap-month{grid-template-columns:80px 1fr}.gap-item{flex-direction:column;gap:8px}.gap-cost{align-self:flex-start}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="proposal-header">
+    <div class="proposal-header-top">
+      <div class="proposal-label">Partnership Proposal</div>
+      <div class="proposal-date">April 2026<br>Confidential</div>
+    </div>
+    <h1>A-Team Construction <span>Ã AIS</span></h1>
+    <p class="proposal-tagline">A strategic product and conversion layer to turn Leak Defend into recurring revenue and marquee projects into bid-winning proof. This complements your existing content operation â adding the infrastructure that turns content into revenue.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What We See</div>
+    <h2>A 21-year company with assets that should be closing deals on autopilot.</h2>
+    <p>A-Team has two things no Madison roofing competitor can match: Governor's Mansion-level project credentials, and a branded subscription maintenance program (Leak Defend) that has the bones of a recurring revenue product. The business has 104 reviews at 4.8 stars and A+ BBB since 2007. The gap is specific â Leak Defend has no sales infrastructure, the marquee projects have no case studies, and the content strategy is producing volume without conversion. The assets exist. The infrastructure to monetize them doesn't.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What It's Costing You</div>
+    <h2>Three gaps, measurable cost.</h2>
+    <div class="gap-list">
+      <div class="gap-item">
+        <div class="gap-indicator red"></div>
+        <div class="gap-content">
+          <strong>Leak Defend has zero online sales infrastructure</strong>
+          <span>No testimonials, no pricing, no enrollment metrics, no CRE-specific page. Commercial property managers can't evaluate the product. Subscription revenue that should be building isn't.</span>
+        </div>
+        <div class="gap-cost">$30-100K/yr</div>
+      </div>
+      <div class="gap-item">
+        <div class="gap-indicator red"></div>
+        <div class="gap-content">
+          <strong>Marquee projects with no case studies</strong>
+          <span>Governor's Mansion, WARF Building, UW Computer Science Hall â credibility assets that would differentiate A-Team on every commercial bid, sitting unused.</span>
+        </div>
+        <div class="gap-cost">Bid impact</div>
+      </div>
+      <div class="gap-item">
+        <div class="gap-indicator amber"></div>
+        <div class="gap-content">
+          <strong>Content thinning: 850 words -> 450 words</strong>
+          <span>Blog word counts down 47% in 14 months. 74 posts by a single non-employee author, zero engagement. Volume without quality or conversion.</span>
+        </div>
+        <div class="gap-cost">Declining SEO</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What We'll Build Together</div>
+    <h2>90-day roadmap. Product + proof.</h2>
+    <div class="roadmap">
+      <div class="roadmap-month">
+        <div class="roadmap-label"><h3>Month 1</h3><div class="dot"></div></div>
+        <div class="roadmap-content">
+          <p><strong>Leak Defend productization.</strong> Pricing page with transparent tiers. Collect 3-5 customer testimonials. Build a CRE-specific landing page with ROI framing for property managers: cost of reactive repair vs. Leak Defend annual fee. Email capture for interested prospects.</p>
+          <p><strong>Governor's Mansion case study.</strong> Project photography, scope of work, timeline, what made it complex, outcome. The flagship credibility asset that goes in every commercial proposal.</p>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-label"><h3>Month 2</h3><div class="dot"></div></div>
+        <div class="roadmap-content">
+          <p><strong>WARF + UW case studies published.</strong> Two additional marquee projects that reinforce A-Team's commercial capability.</p>
+          <p><strong>Commercial-specific landing page.</strong> Separate entry point for property managers and commercial decision-makers â dedicated case studies, Leak Defend CTA, commercial-focused language. Clear separation from residential messaging.</p>
+          <p><strong>Blog strategy shift.</strong> Move from 4 thin posts/month to 2 substantive posts with project photography and A-Team expertise. Coordinate with existing content operation.</p>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-label"><h3>Month 3</h3><div class="dot"></div></div>
+        <div class="roadmap-content">
+          <p><strong>Leak Defend enrollment tracking.</strong> Dashboard or simple metrics page showing enrollment count, retention rate, and growth. Social proof that compounds.</p>
+          <p><strong>Email nurture for commercial prospects.</strong> Automated follow-up for Leak Defend page visitors and commercial landing page contacts.</p>
+          <p><strong>Measurement.</strong> Leak Defend inquiries, commercial page traffic, bid win rate comparison, content performance. Quantified ROI for month 3 review.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>A note on how this fits:</strong> This engagement adds a strategic product and conversion layer that complements your existing content operation. We're building the infrastructure that turns content into revenue â Leak Defend sales pages, case studies, commercial positioning, enrollment tracking. The content production engine stays where it is. We're adding the strategy and conversion pieces on top.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">The Investment</div>
+    <h2>Make it make sense.</h2>
+    <div class="investment-box">
+      <div class="investment-amount">$2,000/mo</div>
+      <div class="investment-period">No long-term contract. Cancel anytime.</div>
+      <div class="investment-terms">
+        <span><span class="check">&#10003;</span> Month-to-month</span>
+        <span><span class="check">&#10003;</span> All deliverables owned by you</span>
+        <span><span class="check">&#10003;</span> Weekly async updates</span>
+      </div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card alt1"><h4>Marketing Agency</h4><div class="price">$5-8K/mo</div><p>Content + creative retainer. More of the same without the strategic product layer.</p></div>
+      <div class="compare-card alt2"><h4>One-Time Project</h4><div class="price">$15-25K</div><p>Site redesign, then done. No Leak Defend productization, no ongoing case study development.</p></div>
+      <div class="compare-card ais"><h4>AIS Partnership</h4><div class="price">$2K/mo</div><p>Product strategy + case studies + conversion infrastructure. Every month builds recurring revenue.</p></div>
+    </div>
+    <p style="font-size:13px;color:var(--text-muted);margin-top:20px;line-height:1.7"><strong style="color:var(--text)">The comparison that matters:</strong> Leak Defend at 20 commercial accounts averaging $3,500/year = $70K in annual recurring revenue. The Governor's Mansion case study on one additional bid over $200K pays for the year. Combined: $24K invested, $80-200K+ in annual value.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What's Included</div>
+    <h2>A strategic partner, not a vendor.</h2>
+    <div class="includes-grid">
+      <div class="includes-item"><span class="check">&#10003;</span> Dedicated strategist (Austin)</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Weekly progress updates</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Leak Defend productization</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Marquee case study development</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Commercial landing page + CTA</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Email capture + nurture setup</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Content strategy coordination</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Monthly performance reporting</div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Let's start with Leak Defend.</h2>
+    <p>One testimonial. One pricing page. One CRE landing page. That's the first proof point â measurable Leak Defend inquiries from commercial property managers within 3 weeks. Everything else builds from there.</p>
+    <a href="mailto:austin@kamplove.org?subject=A-Team%20%C3%97%20AIS%20-%20Let's%20Go" class="cta-btn">Let's Go &rarr;</a>
+    <p class="cta-sub">austin@kamplove.org</p>
+  </div>
+
+  <div class="footer"><p>Austin Rockwell &middot; AIS &middot; April 2026 &middot; Confidential</p></div>
+</div>
+</body>
+</html>
