@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakeside Curative Services Ã AIS â Partnership Proposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{--bg:#fafaf9;--bg-white:#fff;--border:#e7e5e4;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--text-dim:#a8a29e;--accent:#4338ca;--red:#dc2626;--red-bg:#fef2f2;--green:#16a34a;--green-bg:#f0fdf4;--amber:#d97706;--amber-bg:#fffbeb;--blue:#2563eb;--blue-bg:#eff6ff}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .container{max-width:760px;margin:0 auto;padding:0 24px}
+  .proposal-header{padding:48px 0 40px;border-bottom:2px solid var(--text)}
+  .proposal-header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px}
+  .proposal-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .proposal-date{font-size:12px;color:var(--text-muted);text-align:right}
+  .proposal-header h1{font-size:28px;font-weight:800;line-height:1.2;letter-spacing:-.02em}
+  .proposal-header h1 span{color:var(--accent)}
+  .proposal-tagline{font-size:15px;color:var(--text-secondary);margin-top:10px;max-width:600px}
+  .section{padding:36px 0;border-bottom:1px solid var(--border)}
+  .section:last-of-type{border-bottom:none}
+  .section-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px}
+  .section h2{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:12px}
+  .section p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+  .gap-list{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+  .gap-item{display:flex;gap:16px;align-items:flex-start;padding:16px 20px;background:var(--bg-white);border:1px solid var(--border);border-radius:10px}
+  .gap-indicator{flex-shrink:0;width:8px;height:8px;border-radius:50%;margin-top:6px}
+  .gap-indicator.red{background:var(--red)}
+  .gap-indicator.amber{background:var(--amber)}
+  .gap-content{flex:1}
+  .gap-content strong{font-size:13px;font-weight:600;display:block;margin-bottom:3px}
+  .gap-content span{font-size:13px;color:var(--text-muted)}
+  .gap-cost{flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--red);background:var(--red-bg);padding:4px 10px;border-radius:6px;white-space:nowrap;align-self:center}
+  .roadmap{margin-top:20px;display:flex;flex-direction:column}
+  .roadmap-month{display:grid;grid-template-columns:100px 1fr}
+  .roadmap-label{padding:20px 16px 20px 0;border-right:2px solid var(--border);position:relative}
+  .roadmap-label h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+  .roadmap-label .dot{position:absolute;right:-5px;top:24px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .roadmap-content{padding:16px 0 24px 24px}
+  .roadmap-content p{font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:6px}
+  .roadmap-content p strong{color:var(--text);font-weight:600}
+  .callout{margin-top:24px;padding:20px 24px;border-radius:10px}
+  .callout.warm{background:var(--amber-bg);border:1px solid #fde68a}
+  .callout.green{background:var(--green-bg);border:1px solid #bbf7d0}
+  .callout p{font-size:13px;color:var(--text-secondary);line-height:1.65}
+  .callout p strong{color:var(--text)}
+  .investment-box{margin-top:20px;background:var(--bg-white);border:2px solid var(--text);border-radius:12px;padding:32px;text-align:center}
+  .investment-amount{font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:800;letter-spacing:-.02em}
+  .investment-period{font-size:14px;color:var(--text-muted);margin-top:4px}
+  .investment-terms{margin-top:20px;font-size:12px;color:var(--text-muted);display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+  .investment-terms span{display:flex;align-items:center;gap:6px}
+  .check{color:var(--green);font-weight:700}
+  .includes-grid{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .includes-item{font-size:13px;color:var(--text-secondary);padding:10px 14px;background:var(--bg-white);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;gap:8px}
+  .cta-section{padding:48px 0;text-align:center}
+  .cta-section h2{font-size:22px;font-weight:700;margin-bottom:12px}
+  .cta-section p{font-size:14px;color:var(--text-muted);max-width:480px;margin:0 auto 28px;line-height:1.7}
+  .cta-btn{display:inline-block;background:var(--text);color:white;padding:14px 40px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:opacity .2s}
+  .cta-btn:hover{opacity:.85}
+  .cta-sub{font-size:12px;color:var(--text-dim);margin-top:12px}
+  .footer{padding:24px 0;border-top:1px solid var(--border);text-align:center}
+  .footer p{font-size:11px;color:var(--text-dim)}
+  @media(max-width:640px){.includes-grid{grid-template-columns:1fr}.roadmap-month{grid-template-columns:80px 1fr}.gap-item{flex-direction:column;gap:8px}.gap-cost{align-self:flex-start}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="proposal-header">
+    <div class="proposal-header-top">
+      <div class="proposal-label">Partnership Proposal</div>
+      <div class="proposal-date">April 2026<br>Confidential</div>
+    </div>
+    <h1>Lakeside Curative Services <span>Ã AIS</span></h1>
+    <p class="proposal-tagline">Building the fundraising and digital infrastructure LCS has never had â so the programs that serve Racine County can survive independent of federal funding decisions.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What We See</div>
+    <h2>A 75-year-old organization at an inflection point.</h2>
+    <p>Lakeside Curative Services has served people with disabilities in Racine County since 1949. The LPA commercial packaging arm closed in March 2026. The surviving programs â QEST employment support and Connect community engagement â do meaningful work for the community. But they depend almost entirely on Medicaid reimbursements that are now under pressure from federal funding cuts. Annual contributions are $40K with no fundraising infrastructure â no development director, no grant writer, no email platform, no foundation relationships. The only giving mechanism is a PayPal button. Meanwhile, lparacine.com is still live five weeks after closure, creating confusion and potential liability. LCS needs two things: an immediate digital cleanup and the fundraising infrastructure to diversify revenue before the next round of cuts.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What It's Costing You</div>
+    <h2>Three gaps. One is urgent.</h2>
+    <div class="gap-list">
+      <div class="gap-item">
+        <div class="gap-indicator red"></div>
+        <div class="gap-content">
+          <strong>Defunct website still live and accepting inquiries</strong>
+          <span>lparacine.com shows a closed business as active. Contact forms still work. No closure notice. No redirect to LCS. This is a liability and confusion issue that should be resolved this week.</span>
+        </div>
+        <div class="gap-cost">Liability</div>
+      </div>
+      <div class="gap-item">
+        <div class="gap-indicator red"></div>
+        <div class="gap-content">
+          <strong>$40K in contributions with zero fundraising infrastructure</strong>
+          <span>Racine County has active foundations and corporate giving programs. LCS has never applied. The gap between $40K/yr and $200-500K over 2-3 years is the cost of not having a development program.</span>
+        </div>
+        <div class="gap-cost">$160-460K gap</div>
+      </div>
+      <div class="gap-item">
+        <div class="gap-indicator amber"></div>
+        <div class="gap-content">
+          <strong>Single-source Medicaid dependency</strong>
+          <span>QEST and Connect rely on reimbursements now threatened by federal cuts. Without diversified revenue, one policy change could eliminate programs that serve the community.</span>
+        </div>
+        <div class="gap-cost">Existential risk</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What We'll Build Together</div>
+    <h2>90-day roadmap. Stabilization first.</h2>
+    <div class="roadmap">
+      <div class="roadmap-month">
+        <div class="roadmap-label"><h3>Month 1</h3><div class="dot"></div></div>
+        <div class="roadmap-content">
+          <p><strong>Redirect lparacine.com to lcsracine.org.</strong> Closure notice, clean domain redirect. Eliminate confusion and liability. This happens in week one.</p>
+          <p><strong>Rebuild donation infrastructure.</strong> Replace PayPal button with a proper donation page â recurring giving options, program designation, donor acknowledgment. Set up email platform for donor communications.</p>
+          <p><strong>Draft foundation prospect list.</strong> Research Racine County community foundations, corporate giving programs, and state/federal grants for disability services. Identify the 10-15 highest-probability targets.</p>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-label"><h3>Month 2</h3><div class="dot"></div></div>
+        <div class="roadmap-content">
+          <p><strong>Case-for-support document.</strong> The foundational fundraising tool â LCS's 75-year history, program impact data for QEST and Connect, community need, and specific funding opportunities. Professional, compelling, ready for foundation applications.</p>
+          <p><strong>Program impact one-pagers.</strong> QEST and Connect each get a standalone impact sheet with outcomes data, client stories, and funding needs. These go in every foundation application and donor meeting.</p>
+          <p><strong>Employer partnership page.</strong> Dedicated web presence for WOTC tax credits and DVR training subsidies targeting Racine/Kenosha manufacturers. Diversify QEST program revenue through employer relationships.</p>
+        </div>
+      </div>
+      <div class="roadmap-month">
+        <div class="roadmap-label"><h3>Month 3</h3><div class="dot"></div></div>
+        <div class="roadmap-content">
+          <p><strong>First foundation applications submitted.</strong> Using the case-for-support and impact one-pagers from month 2. Target: 3-5 applications submitted by end of month 3.</p>
+          <p><strong>Donor email nurture launched.</strong> Quarterly communications to existing donors and new contacts. Impact updates, program stories, giving opportunities.</p>
+          <p><strong>Measurement.</strong> Foundation applications submitted, donor list growth, employer partnership inquiries, website consolidation complete. Build the case for a part-time development director funded by initial grants.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout warm">
+      <p><strong>The long-term goal:</strong> This 90-day engagement builds the infrastructure that justifies hiring a part-time development director. The foundation prospect list, case-for-support, program one-pagers, donor database, and email platform become the toolkit a development hire walks into â instead of starting from scratch. The first grants fund the position. The position sustains the program.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">The Investment</div>
+    <h2>Every dollar matters. This one builds the engine.</h2>
+
+    <div class="investment-box">
+      <div class="investment-amount">$2,000/mo</div>
+      <div class="investment-period">No long-term contract. Cancel anytime.</div>
+      <div class="investment-terms">
+        <span><span class="check">&#10003;</span> Month-to-month</span>
+        <span><span class="check">&#10003;</span> All materials owned by LCS</span>
+        <span><span class="check">&#10003;</span> Weekly progress updates</span>
+      </div>
+    </div>
+
+    <div class="callout green" style="margin-top:20px">
+      <p><strong>The math for an organization with a $754K deficit:</strong> This investment is designed to build infrastructure that generates $200-500K in foundation funding over 2-3 years â revenue that doesn't depend on Medicaid rates or federal budget decisions. The first successful foundation grant could cover the entire engagement cost. If budget is the barrier, a reduced-scope engagement focused on the website redirect + donation page + foundation prospect research is possible at a lower monthly commitment.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What's Included</div>
+    <h2>Built for a nonprofit's actual needs.</h2>
+    <div class="includes-grid">
+      <div class="includes-item"><span class="check">&#10003;</span> Dedicated strategist (Austin)</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Weekly progress updates</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Website consolidation + redirect</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Donation page + infrastructure</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Foundation research + applications</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Case-for-support document</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Program impact one-pagers</div>
+      <div class="includes-item"><span class="check">&#10003;</span> Donor email platform + nurture</div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Let's start with the website.</h2>
+    <p>Redirect lparacine.com. Clean up lcsracine.org. Build a real donation page. That's week one â tangible, immediate, and it sets the foundation for everything that follows. No cost for the initial conversation.</p>
+    <a href="mailto:austin@kamplove.org?subject=LCS%20-%20Let's%20Talk" class="cta-btn">Let's Have a Conversation &rarr;</a>
+    <p class="cta-sub">austin@kamplove.org</p>
+  </div>
+
+  <div class="footer"><p>Austin Rockwell &middot; AIS &middot; April 2026 &middot; Confidential</p></div>
+</div>
+</body>
+</html>
