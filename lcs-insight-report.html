@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakeside Curative Services â Digital Presence Analysis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root{--bg:#0a0a0f;--bg-card:#12121a;--border:#1e1e2e;--border-accent:#2a2a3e;--text:#e4e4ef;--text-muted:#8888a0;--text-dim:#5a5a72;--accent:#6366f1;--accent-light:#818cf8;--red:#ef4444;--red-dim:rgba(239,68,68,.12);--green:#22c55e;--green-dim:rgba(34,197,94,.12);--amber:#f59e0b;--amber-dim:rgba(245,158,11,.12);--blue:#3b82f6;--blue-dim:rgba(59,130,246,.12)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .container{max-width:900px;margin:0 auto;padding:0 24px}
+  .header{padding:48px 0 32px;border-bottom:1px solid var(--border)}
+  .header-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-light);margin-bottom:16px}
+  .header h1{font-size:28px;font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
+  .header h1 span{color:var(--amber)}
+  .header-sub{font-size:16px;color:var(--text-muted);max-width:660px;line-height:1.65}
+  .header-meta{margin-top:24px;display:flex;gap:24px;flex-wrap:wrap}
+  .meta-item{font-size:12px;color:var(--text-dim)}
+  .meta-item strong{color:var(--text-muted);font-weight:500}
+  .stat-hero{padding:56px 0 48px;text-align:center;border-bottom:1px solid var(--border)}
+  .stat-hero-number{font-family:'JetBrains Mono',monospace;font-size:88px;font-weight:800;letter-spacing:-.04em;line-height:1;background:linear-gradient(135deg,var(--amber),#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .stat-hero-label{font-size:20px;color:var(--text-muted);margin-top:12px}
+  .stat-hero-label strong{color:var(--text);font-weight:600}
+  .stat-hero-explain{font-size:14px;color:var(--text-dim);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+  .section{padding:48px 0;border-bottom:1px solid var(--border)}
+  .section-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-light);margin-bottom:8px}
+  .section h2{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px}
+  .section-text{font-size:15px;color:var(--text-muted);max-width:720px;line-height:1.7;margin-bottom:24px}
+  .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px}
+  .card.full{grid-column:1/-1}
+  .card-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:14px}
+  .card-icon.red{background:var(--red-dim);color:var(--red)}
+  .card-icon.green{background:var(--green-dim);color:var(--green)}
+  .card-icon.amber{background:var(--amber-dim);color:var(--amber)}
+  .card-icon.blue{background:var(--blue-dim);color:var(--blue)}
+  .card h3{font-size:14px;font-weight:600;margin-bottom:8px}
+  .card p{font-size:13px;color:var(--text-muted);line-height:1.6}
+  .revenue-chart{margin-top:28px;display:flex;align-items:flex-end;gap:12px;height:200px;padding:0 20px}
+  .revenue-bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px}
+  .revenue-bar .bar{width:100%;border-radius:6px 6px 0 0;transition:height .5s}
+  .revenue-bar .year{font-size:12px;font-weight:600;color:var(--text-dim)}
+  .revenue-bar .amount{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
+  .opp-table{margin-top:28px}
+  .opp-row{display:grid;grid-template-columns:1fr 120px 120px;gap:1px;margin-bottom:1px}
+  .opp-row.header{margin-bottom:8px}
+  .opp-row.header>div{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);padding:8px 16px}
+  .opp-cell{background:var(--bg-card);padding:16px;font-size:13px;color:var(--text-muted);line-height:1.5}
+  .opp-cell:first-child{border-radius:8px 0 0 8px}
+  .opp-cell:last-child{border-radius:0 8px 8px 0}
+  .opp-cell strong{color:var(--text);font-weight:600}
+  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px}
+  .tag.high{background:var(--green-dim);color:var(--green)}
+  .tag.med{background:var(--amber-dim);color:var(--amber)}
+  .tag.critical{background:var(--red-dim);color:var(--red)}
+  .tag.free{background:var(--blue-dim);color:var(--blue)}
+  .roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+  .roi-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+  .roi-label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px}
+  .roi-number{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;letter-spacing:-.02em}
+  .roi-sub{font-size:12px;color:var(--text-muted);margin-top:6px}
+  .cta{padding:64px 0;text-align:center}
+  .cta h2{font-size:24px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px}
+  .cta p{font-size:15px;color:var(--text-muted);max-width:520px;margin:0 auto 32px;line-height:1.7}
+  .cta-button{display:inline-block;background:var(--accent);color:white;padding:14px 36px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s,transform .15s}
+  .cta-button:hover{background:var(--accent-light);transform:translateY(-1px)}
+  .cta-sub{font-size:12px;color:var(--text-dim);margin-top:16px}
+  .footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
+  .footer p{font-size:12px;color:var(--text-dim)}
+  @media(max-width:640px){.card-grid{grid-template-columns:1fr}.roi-grid{grid-template-columns:1fr}.stat-hero-number{font-size:64px}.header h1{font-size:22px}.opp-row{grid-template-columns:1fr}.revenue-chart{height:150px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="header-label">Digital Presence Analysis</div>
+    <h1>Lakeside Curative Services has served Racine for 75 years.<br><span>The next 5 depend on what happens now.</span></h1>
+    <p class="header-sub">LPA's commercial arm closed in March. The surviving programs â QEST and Connect â serve the community but depend on federal funding under pressure. This report looks at where things stand and where the leverage is.</p>
+    <div class="header-meta">
+      <div class="meta-item"><strong>Prepared for</strong>&nbsp; LCS Leadership</div>
+      <div class="meta-item"><strong>Date</strong>&nbsp; April 15, 2026</div>
+      <div class="meta-item"><strong>Prepared by</strong>&nbsp; Austin Rockwell</div>
+    </div>
+  </div>
+
+  <div class="stat-hero">
+    <div class="stat-hero-number">$40K</div>
+    <div class="stat-hero-label">annual contributions â <strong>with no fundraising infrastructure</strong></div>
+    <p class="stat-hero-explain">No development director. No grant writer. No email platform. No foundation relationships. A PayPal button is the only giving mechanism. Racine County has foundation money available that LCS has never pursued.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Finding 01 â Immediate</div>
+    <h2>lparacine.com is still live. Five weeks after closure.</h2>
+    <p class="section-text">LPA permanently closed operations on March 6, 2026 with a WARN filing eliminating 56 positions. The website is still live and accepting inquiries. Anyone searching "LPA Racine" finds a business that no longer exists, with no mention of the closure and no redirect to Lakeside Curative Services. This is a liability issue and a confusion issue that costs nothing to fix.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon red">&#9888;</div>
+        <h3>The Risk</h3>
+        <p>Potential customers, partners, and referral sources finding a defunct business with active contact forms. Former employees and community members seeing no acknowledgment of the closure. Search results showing a business that doesn't exist.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon green">&#10003;</div>
+        <h3>The Fix (Free)</h3>
+        <p>Redirect lparacine.com to lcsracine.org with a brief closure notice. Takes less than an hour. Costs nothing beyond the domain redirect. Should have happened March 7.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Finding 02</div>
+    <h2>75 years of community service. Zero fundraising infrastructure.</h2>
+    <p class="section-text">$40K in annual contributions for an organization with $3.8M in revenue and 75 years of history isn't a fundraising result â it's the absence of fundraising. There's no development director, no grant writer, no email platform for donor communications, no foundation relationships, and no case-for-support document. The only giving mechanism is a PayPal button.</p>
+    <div class="card-grid">
+      <div class="card full">
+        <div class="card-icon amber">&#9733;</div>
+        <h3>What's available in Racine County</h3>
+        <p>Racine County has active community foundations, corporate giving programs, and state/federal grant opportunities for disability services organizations. LCS has never applied. A basic development program targeting local foundations â with a case for support, program impact data, and a real donation infrastructure â could realistically generate $200-500K over 2-3 years. That's revenue that doesn't depend on Medicaid reimbursement rates or federal budget decisions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Finding 03</div>
+    <h2>The revenue trajectory tells the story.</h2>
+    <p class="section-text">Three consecutive years of declining revenue and accelerating deficits. The surviving programs depend on Medicaid reimbursements that are now under pressure from federal funding cuts. The question isn't whether LCS needs diversified revenue. It's whether the infrastructure to build it gets built in time.</p>
+    <div class="revenue-chart">
+      <div class="revenue-bar"><div class="amount" style="color:var(--green)">$5.7M</div><div class="bar" style="height:100%;background:var(--green)"></div><div class="year">2021</div></div>
+      <div class="revenue-bar"><div class="amount" style="color:var(--amber)">$4.8M</div><div class="bar" style="height:84%;background:var(--amber)"></div><div class="year">2022</div></div>
+      <div class="revenue-bar"><div class="amount" style="color:var(--amber)">$4.2M</div><div class="bar" style="height:74%;background:var(--amber)"></div><div class="year">2023</div></div>
+      <div class="revenue-bar"><div class="amount" style="color:var(--red)">$3.8M</div><div class="bar" style="height:67%;background:var(--red)"></div><div class="year">2024</div></div>
+    </div>
+    <div class="card-grid" style="margin-top:24px">
+      <div class="card">
+        <div class="card-icon red">&#8595;</div>
+        <h3>Net Loss: -$754K (2024)</h3>
+        <p>Three consecutive years of accelerating deficits. The LPA closure reduced expenses but also eliminated revenue. Surviving programs must find new revenue sources or continue drawing down reserves.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon amber">&#9888;</div>
+        <h3>Medicaid Dependency</h3>
+        <p>QEST and Connect program funding flows through Medicaid reimbursements now facing federal cuts. Single-source revenue dependency is an existential risk for the surviving organization.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Stabilization Priorities</div>
+    <h2>Four moves. In order of urgency.</h2>
+    <p class="section-text">These aren't growth plays. They're stabilization priorities â the infrastructure that gives LCS a path to sustainable funding independent of federal budget decisions.</p>
+    <div class="opp-table">
+      <div class="opp-row header"><div>Action</div><div>Priority</div><div>Cost</div></div>
+      <div class="opp-row">
+        <div class="opp-cell"><strong>Redirect lparacine.com to lcsracine.org</strong><br>Closure notice, domain redirect, eliminate confusion and liability. Should happen this week.</div>
+        <div class="opp-cell"><span class="tag critical">Immediate</span></div>
+        <div class="opp-cell"><span class="tag free">Free</span></div>
+      </div>
+      <div class="opp-row">
+        <div class="opp-cell"><strong>Build real donation infrastructure</strong><br>Replace PayPal button with proper donation page. Set up email platform for donor communications. Create case-for-support document.</div>
+        <div class="opp-cell"><span class="tag critical">Critical</span></div>
+        <div class="opp-cell"><span class="tag med">Month 1</span></div>
+      </div>
+      <div class="opp-row">
+        <div class="opp-cell"><strong>Launch foundation fundraising program</strong><br>Research Racine County foundations, prepare applications, build relationships. Target: $200-500K over 2-3 years.</div>
+        <div class="opp-cell"><span class="tag critical">Critical</span></div>
+        <div class="opp-cell"><span class="tag med">Months 2-3</span></div>
+      </div>
+      <div class="opp-row">
+        <div class="opp-cell"><strong>Employer partnership expansion</strong><br>Market WOTC tax credits and DVR training subsidies to Racine/Kenosha manufacturers. Diversify QEST program revenue sources.</div>
+        <div class="opp-cell"><span class="tag med">High</span></div>
+        <div class="opp-cell"><span class="tag med">Month 3</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">The Funding Gap</div>
+    <h2>What's possible vs. what exists.</h2>
+    <p class="section-text">The gap between current contributions ($40K/yr with no infrastructure) and potential foundation funding ($200-500K over 2-3 years) represents the single highest-leverage investment LCS can make in its survival. Every other option â facility cuts, program reductions, staff layoffs â shrinks the organization. Building fundraising infrastructure grows it.</p>
+    <div class="roi-grid">
+      <div class="roi-card"><div class="roi-label">Current Contributions</div><div class="roi-number" style="color:var(--red)">$40K/yr</div><div class="roi-sub">PayPal button, no outreach</div></div>
+      <div class="roi-card"><div class="roi-label">Potential (2-3 Years)</div><div class="roi-number" style="color:var(--green)">$200-500K</div><div class="roi-sub">Foundation grants + donor program</div></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>A conversation about what's possible.</h2>
+    <p>No cost. No obligation. Just an honest look at where things stand and what the options are. LCS has served Racine for 75 years. The programs that survive deserve infrastructure that lets them keep going.</p>
+    <a href="mailto:austin@kamplove.org?subject=LCS%20-%20Let's%20Talk" class="cta-button">Let's Have a Conversation</a>
+    <p class="cta-sub">austin@kamplove.org</p>
+  </div>
+
+  <div class="footer"><p>Prepared by Austin Rockwell &middot; April 2026 &middot; Confidential</p></div>
+</div>
+</body>
+</html>
